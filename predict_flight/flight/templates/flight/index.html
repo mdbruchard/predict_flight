@@ -4,5 +4,62 @@
 {% block title %}Index{% endblock %}
 
 {% block body %}
-TODO
+<div class="container">
+    <div class="head">
+        <h1 id="tilte">Find your perfect flight</h1>
+
+        <p>Fill up the form below and find the flight you need.</p>
+    </div>
+    <div class="body">
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+
+            <label for="airline">Airline</label>
+
+            <select name="airline" id="airline" class="input-form" >
+                <option class="input-form" ></option>
+                <option  class="input-form" value="IndiGo">IndiGo</option>
+                <option  class="input-form" value="Air India">Air India</option>
+                <option  class="input-form" value="Jet Airways">Jet Airways</option>
+                <option  class="input-form" value="SpiceJet">SpiceJet</option>
+                <option  class="input-form" value="Multiple carriers">Multiple carriers</option>
+                <option  class="input-form" value="GoAir">GoAir</option>
+                <option  class="input-form" value="Vistara">Vistara</option>
+                <option  class="input-form" value="Air Asia">Air Asia</option>
+                <option  class="input-form" value="Vistara Premium economy">Vistara Premium economy</option>
+                <option  class="input-form" value="Jet Airways Business">Jet Airways Business</option>
+                <option  class="input-form" value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                <option  class="input-form" value="Trujet">Trujet</option>
+            </select>
+            
+            <label for="depature">Depature Date</label>
+            <input type="date" name="depature" id="depature" >
+
+            <label for="source">From:</label>
+            <select  name="source" id="source" class="input-form" required>
+                <option value=""></option>
+                <option class="input-form" value="Banglore">Banglore</option>
+                <option class="input-form" value="Kolkata">Kolkata</option>
+                <option class="input-form" value="Delhi">Delhi</option>
+                <option class="input-form" value="Chennai">Chennai</option>
+                <option class="input-form" value="Mumbai">Mumbai</option>
+            </select>
+            
+            <label for="destination">To:</label>
+            <select class="input-form" name="destination" id="destination" required>
+                <option class="input-form" value=""></option>
+                <option class="input-form" value="New Delhi">New Delhi</option>
+                <option class="input-form" value="Banglore">Banglore</option>
+                <option class="input-form" value="Cochin">Cochin</option>
+                <option class="input-form" value="Kolkata">Kolkata</option>
+                <option class="input-form" value="Hyderabad">Hyderabad</option>
+            </select>
+
+           
+            
+            <input type="submit" value="Search your flight">
+        </form>
+
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'flight/layout.html' %}
+{% load static %}
+
+{% block title %}Flight information{% endblock %}
+
+{% block body %}
+<div class="ctn-get-info">
+    <div class="ctn-get-info-head">
+        <h2>
+          Flight with {{ flight.airline }}
+        </h2>
+        
+        <h3>Depature Time: {{ flight.dep_time }}</h3>
+        
+        
+        <div class="ctn-get-info-body">
+            
+                    <table>
+                        <tr>
+                            <th>Depature</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Landing</th>
+                            <th>Route</th>
+                            <th>information</th>
+                        </tr>
+                        <tr>
+                            <td>{{ flight.date_of_journey | date:'d/m/Y'}}</td>
+                            <td>{{ flight.source }}</td>
+                            <td>{{ flight.destination }}</td>
+                            <td>{{ flight.arrival_time }}</td>
+                            <td>{{ flight.route }}</td>
+                            <td>{{ flight.additional_info }}</td>
+                        </tr>
+                    </table>
+            <h3>Price ticket ${{ price }}</h3>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'flight/layout.html' %}
+{% load static %}
+
+{% block title %}Flights{% endblock %}
+
+{% block body %}
+<div class="flight-container">
+    {% for flight in flights %}
+    <div class="flight-box">
+        <h4>{{ flight.airline }}</h4>
+       <p>
+           From {{ flight.source }} to {{ flight.destination }} <span>Depature Time: {{ flight.dep_time }}</span>
+        </p><span>Depature Time: {{ flight.dep_time }}</span><button><a href="{% url 'flight' flight.id %}">Click here </a></button><span>for more information</span>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
